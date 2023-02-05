@@ -1,21 +1,28 @@
-#include <functional>
+# include <functional>
 # include <iostream>
 # include <list>
 # include <mutex>
 # include <condition_variable>
 # include <thread>
 # include <vector>
+
+// For sleep function to work - Linux
+// #include <unistd.h>
+
+// For sleep function to work - Windows
+#include <windows.h>
+
 using namespace std;
 
-
 class Workers {
-    list<function<void()>> tasks; // Lista med tasks som trådene skal fullføre
-    vector<thread> worker_threads;
+    list<function<void()>> tasks; // List with tasks that are yet to be completed
+    vector<thread> worker_threads; // List with threads in use
 
     int amount_of_threads = 0;
     mutex tasks_mutex;
     condition_variable cv;
-    bool running, wait = true;
+    bool running = true;
+    bool wait = true;
 
     public:
         Workers(int amount_of_threads) {
@@ -24,7 +31,7 @@ class Workers {
 
     // Creates a specified amount of threads
     void start() {
-        worker_threads = vector<thread>(amount_of_threads);
+        worker_threads = vector<thread>();
         
         for (int i = 0; i < amount_of_threads; i++) {
             worker_threads.emplace_back([this] {
@@ -32,8 +39,8 @@ class Workers {
                     function<void()> task;
                     {
                         unique_lock<mutex> lock(tasks_mutex);
-                        while (wait && running){
-                            cv.wait(lock); // Locks thread until it is notified, which happens when post() is used
+                        while (wait){
+                            cv.wait(lock); // Unlocks mutex and waits until notified, which happens after mutex is locked again
                         }
                         
                         if (!tasks.empty()) {
@@ -41,10 +48,11 @@ class Workers {
                             tasks.pop_front(); // Remove task from list
                         }
                     }
-                    if (task) task(); // Run task outside of mutex lock                  
+                    if (task) task(); // Run task outside of mutex lock if "task" points to anything       
                 }
             });
 
+            // Thread completed a task, wake up next thread waiting
             {
                 unique_lock<mutex> lock(tasks_mutex);
                 wait = false;
@@ -53,11 +61,12 @@ class Workers {
         }
     }
 
-    // Legger til en funksjon i tasks-lista
-    void post(function<void()> &task) {
-        unique_lock<mutex> lock(tasks_mutex);
+    // Adds a task to the tasks list
+    void post(const function<void()> &task) {
+        unique_lock<mutex> lock(tasks_mutex); // Makes sure the list gets updated without a thread trying to access/change it
         tasks.emplace_back(task);
-        cv.notify_one(); // Vekker én tråd som venter på å utføre en task
+        wait = false;
+        cv.notify_one(); // Wakes one thread waiting for a task
     }
 
 
@@ -66,27 +75,26 @@ class Workers {
     void stop() {
         while (running) {
             if (tasks.empty()) {
+                cout << "Running set to false" << endl;
                 running = false;
+                cv.notify_all();
             }
         }
     }
 
-    // Kjører task argumentet etter et gitt antall milisekund
-    void post_timeout(int miliseconds) {
-        
+    // Posts the task after a given amount of miliseconds
+    void post_timeout(const function<void()> &task, int miliseconds) {
+        Sleep(miliseconds);
+        unique_lock<mutex> lock(tasks_mutex);
+        tasks.emplace_back(task);
     }
 
     void join() {
-        for (auto &thread : worker_threads) {
-            thread.join();
+        for (thread &t : worker_threads) {
+            t.join();
         }
     }
-
 };
-
-
-
-
 
 
 
@@ -99,32 +107,50 @@ int main() {
 
     worker_threads.post([] {
         cout << "Task A" << endl;
-        // Task A
     });
+
+
     worker_threads.post([] {
         cout << "Task B, might run in parallel with A" << endl;
-        // Task B
-        // might run in parallel with task A
     });
 
     event_loop.post([] {
-        cout << "Task C, might run in parallell with A and B" << endl;
-        // Task C
-        // Might run in parallel with task A and B
+        cout << "Task C, might run in parallel with A and B" << endl;
     });
     event_loop.post([] {
         cout << "Task D, will run after C, might run in parallel with A and B" << endl;
-        // Task D
-        // Will run after task C
-        // Might run in parallel with task A and B
     });
 
+    // 2second delayed post
+    worker_threads.post_timeout([] {
+    cout << "2000ms delayed task" << endl;
+    }, 2000);
+
+    // random testing
+    worker_threads.post([] {
+        cout << "Task 123" << endl;
+    });
+
+    worker_threads.post([] {
+        cout << "Task 123" << endl;
+    });
+    worker_threads.post([] {
+        cout << "Task 123" << endl;
+    });
+    worker_threads.post([] {
+        cout << "Task 123" << endl;
+    });
+    worker_threads.post([] {
+        cout << "Task 123" << endl;
+    });
+
+    worker_threads.stop();
+    event_loop.stop();
 
     worker_threads.join(); // Calls join() on the worker threads
     event_loop.join(); // Calls join() on the event thread
 
-    worker_threads.stop();
-    event_loop.stop();
+    cout << "Program finished" << endl;
     
     return 0;
 }
