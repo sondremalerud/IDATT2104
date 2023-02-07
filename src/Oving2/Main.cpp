@@ -7,10 +7,10 @@
 # include <vector>
 
 // For sleep function to work - Linux
-// #include <unistd.h>
+#include <unistd.h>
 
 // For sleep function to work - Windows
-#include <windows.h>
+// #include <windows.h>
 
 using namespace std;
 
@@ -84,7 +84,8 @@ class Workers {
 
     // Posts the task after a given amount of miliseconds
     void post_timeout(const function<void()> &task, int miliseconds) {
-        Sleep(miliseconds);
+        sleep(miliseconds/1000); // FOR MAC / LINUX
+        //Sleep(miliseconds); // FOR WINDOWS
         unique_lock<mutex> lock(tasks_mutex);
         tasks.emplace_back(task);
     }
