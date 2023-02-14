@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nettverksprogrammering.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving2/Main.java" afterDir="false" />
+    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="Klar til levering">
+      <change afterPath="$PROJECT_DIR$/src/Oving2/Main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving2/Main.dSYM/Contents/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving2/Main.dSYM/Contents/Resources/DWARF/Main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving3/SocketKlient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/UDPClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/UDPServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/ov4.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,29 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Oving2.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Oving1.Main" />
-      <module name="Nettverksprogrammering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Oving1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RunManager" selected="Application.Webtjener">
     <configuration name="Oving2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Oving2.Main" />
       <module name="Nettverksprogrammering" />
@@ -74,10 +69,72 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SocketKlient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Oving3.SocketKlient" />
+      <module name="Nettverksprogrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Oving3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SocketTjener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Oving3.SocketTjener" />
+      <module name="Nettverksprogrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Oving3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SocketTraadTjener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Oving3.SocketTraadTjener" />
+      <module name="Nettverksprogrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Oving3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Webtjener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Oving3.Webtjener" />
+      <module name="Nettverksprogrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Oving3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Oving2.Main" />
+      <item itemvalue="Application.SocketKlient" />
+      <item itemvalue="Application.SocketTjener" />
+      <item itemvalue="Application.SocketTraadTjener" />
+      <item itemvalue="Application.Webtjener" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Webtjener" />
+        <item itemvalue="Application.SocketKlient" />
+        <item itemvalue="Application.SocketTraadTjener" />
+        <item itemvalue="Application.SocketTjener" />
         <item itemvalue="Application.Oving2.Main" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -89,8 +146,39 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675088344170</updated>
-      <workItem from="1675088346002" duration="822000" />
+      <workItem from="1675088346002" duration="1530000" />
+      <workItem from="1675677641256" duration="173000" />
+      <workItem from="1675677848628" duration="297000" />
+      <workItem from="1675678195283" duration="313000" />
+      <workItem from="1675678515937" duration="21403000" />
+      <workItem from="1676016329022" duration="780000" />
+      <workItem from="1676391031257" duration="3281000" />
     </task>
+    <task id="LOCAL−00001" summary="initial">
+      <created>1675089586728</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1675089586728</updated>
+    </task>
+    <task id="LOCAL−00002" summary="initial">
+      <created>1675089635587</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1675089635587</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Første del av øving 3">
+      <created>1675689953725</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1675689953725</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Klar til levering">
+      <created>1675773704793</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1675773704793</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +197,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial" />
+    <MESSAGE value="Første del av øving 3" />
+    <MESSAGE value="Klar til levering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Klar til levering" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Oving3/Webtjener.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
