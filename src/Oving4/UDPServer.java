@@ -9,9 +9,12 @@ public class UDPServer {
     public static void main(String[] args) throws IOException {
         final int PORTNR = 1250;
         byte[] buf = new byte[256];
+        int num1, num2;
+        String operator;
 
         // will be used to send packets
         DatagramSocket socket = new DatagramSocket(PORTNR);
+        String returnMsg = "";
 
 
         while (true) {
@@ -24,26 +27,28 @@ public class UDPServer {
             InetAddress address = packet.getAddress();
             int port = packet.getPort();
 
-            packet = new DatagramPacket(buf, buf.length, address, port);
             String received = new String(packet.getData(), 0, packet.getLength());
 
-            if (received.equalsIgnoreCase("exit")) {
-                continue; //start loop over and wait for a new connection
+            if (received.equalsIgnoreCase("exit")) break;
+
+            try {
+                String[] numbers = received.split(" ");
+                num1 = Integer.parseInt(numbers[0]);
+                operator = numbers[1];
+                num2 = Integer.parseInt(numbers[2]);
+                System.out.println(operator);
+                if (operator.equals("+")) returnMsg = (num1 + " + " + num2 + " = " + (num1 + num2));
+                else if (operator.equals("-")) returnMsg = (num1 + " - " + num2 + " = " + (num1 - num2));
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
-
-            //TODO: process packet before sending back
-
-
+            packet = new DatagramPacket(returnMsg.getBytes(), returnMsg.length(), address, port);
             socket.send(packet);
-
-
-
         }
         socket.close();
 
-
+        System.out.println("Exiting...");
     }
-
-
 }
