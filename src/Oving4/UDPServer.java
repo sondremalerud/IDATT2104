@@ -25,6 +25,7 @@ public class UDPServer {
 
             // address and port of the client, will be used to send response back
             InetAddress address = packet.getAddress();
+            System.out.println(address);
             int port = packet.getPort();
 
             String received = new String(packet.getData(), 0, packet.getLength());

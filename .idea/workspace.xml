@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="Øving 4 oppg 1 ferdig">
+    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="Begynt smått på øving 4">
+      <change afterPath="$PROJECT_DIR$/kasia-temp/network-programming" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ClientProcess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ServerProcess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/HTTP.pcapng" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/UDP.pcapng" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/examplestore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oving4/UDPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oving4/UDPClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ServerProcess.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ServerProcess.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Oving4/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oving4/UDPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +61,12 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.UDPClient">
+  <component name="RunManager" selected="Application.UDPServer">
     <configuration name="SocketKlient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Oving3.SocketKlient" />
       <module name="Nettverksprogrammering" />
@@ -129,8 +141,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UDPClient" />
         <item itemvalue="Application.UDPServer" />
+        <item itemvalue="Application.UDPClient" />
         <item itemvalue="Application.Webtjener" />
         <item itemvalue="Application.SocketKlient" />
         <item itemvalue="Application.SocketTraadTjener" />
@@ -155,6 +167,7 @@
       <workItem from="1676463479374" duration="258000" />
       <workItem from="1676463979723" duration="262000" />
       <workItem from="1676464253793" duration="4821000" />
+      <workItem from="1676707979293" duration="5798000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <created>1675089586728</created>
@@ -215,7 +228,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Oving4/UDPServer.java</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
