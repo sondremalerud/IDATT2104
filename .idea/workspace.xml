@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="Begynt smått på øving 4">
-      <change afterPath="$PROJECT_DIR$/kasia-temp/network-programming" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ClientProcess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ServerProcess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/HTTP.pcapng" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/JavaSSLServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/UDP.pcapng" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/examplestore" afterDir="false" />
+    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="123">
+      <change afterPath="$PROJECT_DIR$/src/Oving4/TLS.pcapng" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oving4/tcp.pcapng" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ServerProcess.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kasia-temp/network-programming/socket/ServerProcess.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oving4/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oving4/UDPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,18 +44,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.UDPServer">
     <configuration name="SocketKlient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Oving3.SocketKlient" />
@@ -167,7 +157,8 @@
       <workItem from="1676463479374" duration="258000" />
       <workItem from="1676463979723" duration="262000" />
       <workItem from="1676464253793" duration="4821000" />
-      <workItem from="1676707979293" duration="5798000" />
+      <workItem from="1676707979293" duration="9124000" />
+      <workItem from="1676976852004" duration="3577000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <created>1675089586728</created>
@@ -193,7 +184,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1675773704793</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="123">
+      <created>1676890527164</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1676890527164</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +213,8 @@
     <MESSAGE value="Første del av øving 3" />
     <MESSAGE value="Klar til levering" />
     <MESSAGE value="Øving 4 oppg 1 ferdig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Øving 4 oppg 1 ferdig" />
+    <MESSAGE value="123" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -225,11 +223,6 @@
           <url>file://$PROJECT_DIR$/src/Oving3/Webtjener.java</url>
           <line>30</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Oving4/UDPServer.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
