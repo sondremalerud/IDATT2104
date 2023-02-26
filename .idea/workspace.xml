@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="123">
-      <change afterPath="$PROJECT_DIR$/src/Oving4/TLS.pcapng" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oving4/tcp.pcapng" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="72a20182-5528-45b2-ad60-f58491d5b6f3" name="Changes" comment="123" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,6 +154,7 @@
       <workItem from="1676464253793" duration="4821000" />
       <workItem from="1676707979293" duration="9124000" />
       <workItem from="1676976852004" duration="3577000" />
+      <workItem from="1677421836558" duration="4000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <created>1675089586728</created>
