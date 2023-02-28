@@ -2,6 +2,6 @@ FROM python:latest
 
 WORKDIR /
 
-COPY code.py ./
+COPY backend/src/main/resources/code.py ./
 
 CMD [ "python", "./code.py" ]
