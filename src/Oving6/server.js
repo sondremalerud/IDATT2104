@@ -64,7 +64,6 @@ const wsServer = net.createServer((connection) => {
   }
 
 
-    console.log("👍👍👍")
     let bytes = Buffer.from(data)
     let length = bytes[1] & 127;
     let maskStart = 2;
@@ -92,6 +91,6 @@ wsServer.on('error', (error) => {
   console.error('Error: ', error);
 });
 
-wsServer.listen(3005, () => {
+wsServer.listen(3001, () => {
   console.log('WebSocket server listening on port 3001');
 });

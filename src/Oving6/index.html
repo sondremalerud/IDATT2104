@@ -15,7 +15,7 @@
     <script>
         let btn = document.getElementById("send-btn");
         let textarea = document.getElementById("txt");
-        var ws = new WebSocket('ws://localhost:3005');
+        var ws = new WebSocket('ws://localhost:3001');
 
         ws.onopen = () => console.log("Connection is open")
         ws.onmessage = (message) => console.log(message) 
