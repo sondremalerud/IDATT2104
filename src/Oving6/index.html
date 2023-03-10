@@ -15,11 +15,14 @@
     <script>
         let btn = document.getElementById("send-btn");
         let textarea = document.getElementById("txt");
-        let ws = new WebSocket('ws://localhost:3001');
+        var ws = new WebSocket('ws://localhost:3005');
+
+        ws.onopen = () => console.log("Connection is open")
+        ws.onmessage = (message) => console.log(message) 
+        
 
         function sendMessage() {
-            console.log(textarea.value)
-            ws.send(textarea.value)
+            ws.send(textarea.value);
         }
 
     </script>

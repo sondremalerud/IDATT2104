@@ -1,5 +1,5 @@
 const net = require('net');
-var crypto = require('crypto');
+const crypto = require('crypto');
 
 // Simple HTTP server responds with a simple WebSocket client test
 const httpServer = net.createServer((connection) => {
@@ -27,40 +27,58 @@ httpServer.listen(3000, () => {
   console.log('HTTP server listening on port 3000');
 });
 
-// Incomplete WebSocket server
+// WebSocket server
 const wsServer = net.createServer((connection) => {
+  let isHandshake = true
   console.log('Client connected');
-  var isHandshake = true
-
+  
   connection.on('data', (data) => {
-    var key = ""
-    //TODO: finn key fra klient, og bruk sha + base64endoding (done(?))
-
     if (isHandshake) {
-
-      const arr = data.toString().split("\n")
-      for (const line in arr) {
+      let key;
+      const arr = data.toString().split("\n");
+      arr.forEach((line) => {
         if (line.includes("Sec-WebSocket-Key")) {
-          key = line.split(" ")[1];
-        }        
-      }
+          key = line.split(" ")[1].trim();
+          console.log("KEY: " + key);
+        }
+
+      })
+
       var shasum = crypto.createHash('sha1')
       combined = key+"258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
       shasum.update(combined)
       encoded = shasum.digest('base64')
 
-      connection.write("HTTP/1.1 101 Switching Protocols\nUpgrade: websocket\nConnection: Upgrade\nSec-WebSocket-Accept: " + encoded)
-      console.log("HTTP/1.1 101 Switching Protocols\nUpgrade: websocket\nConnection: Upgrade\nSec-WebSocket-Accept: " + encoded)
+      connection.write("HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: " + encoded + "\r\n\r\n")
+      console.log("HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: " + encoded + "\r\n")
+
       isHandshake = false
+      return
     } 
 
-    console.log('Data received from client: ', data.toString());
+    //close frame from client
+    if (data[0] === 0x8) {
+      console.log("Close message received from client");
+      connection.end()
+      return
+  }
 
-    // TODO: tolk dataen og console log det dekrypterte
 
-
-
-
+    console.log("👍👍👍")
+    let bytes = Buffer.from(data)
+    let length = bytes[1] & 127;
+    let maskStart = 2;
+    let dataStart = maskStart + 4;
+    let msg = '';
+  
+    for (let i = dataStart; i < dataStart + length; i++) {
+      let byte = bytes[i] ^ bytes[maskStart + ((i - dataStart) % 4)];
+      //console.log(String.fromCharCode(byte));
+      msg += String.fromCharCode(byte);
+    } 
+    console.log("Message: " + msg);
+    connection.write(msg);
+    return
 
   });
 
@@ -74,17 +92,6 @@ wsServer.on('error', (error) => {
   console.error('Error: ', error);
 });
 
-wsServer.listen(3001, () => {
+wsServer.listen(3005, () => {
   console.log('WebSocket server listening on port 3001');
 });
-
-
-
-let bytes = Buffer.from([0x81, 0x83, 0xb4, 0xb5, 0x03, 0x2a, 0xdc, 0xd0, 0x6a]);
-let length = bytes[1] & 127;
-let maskStart = 2;
-let dataStart = maskStart + 4;
-for (let i = dataStart; i < dataStart + length; i++) {
-  let byte = bytes[i] ^ bytes[maskStart + ((i - dataStart) % 4)];
-  console.log(String.fromCharCode(byte));
-}
