@@ -125,6 +125,7 @@ httpServer.listen(3000, () => {
 });
 
 // WebSocket server
+// Documentation used: https://www.rfc-editor.org/rfc/rfc6455 
 const wsServer = net.createServer((connection) => {
   let isHandshake = true
   console.log('Client connected');
